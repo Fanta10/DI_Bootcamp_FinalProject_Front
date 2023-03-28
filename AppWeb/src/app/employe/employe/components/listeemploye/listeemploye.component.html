@@ -1,0 +1,28 @@
+<table class="table table-striped table-hover mt-3 taille">
+  <thead>
+    <tr>
+      <th scope="col">Matricule</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <!-- <th scope="col">Site employe</th> -->
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let employe of employes">
+
+      <td>{{employe.matricule}}</td>
+      <td>{{employe.nom}}</td>
+      <td>{{employe.prenom}}</td>
+      <td>{{employe.email}}</td>
+
+
+
+      <td><button class="btn btn-primary">Modifier</button></td>
+      <td><button class="btn btn-success" (click)="delete(employe.id)">Supprimer</button></td>
+    </tr>
+
+  </tbody>
+</table>

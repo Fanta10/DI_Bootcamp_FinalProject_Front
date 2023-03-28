@@ -1,0 +1,31 @@
+<h2 class="fw-bold text-center text-primary">Budget previsionnel de Materiels</h2>
+
+<table class="table table-striped table-hover mt-3 taille">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Libelle</th>
+      <th scope="col">montant</th>
+      <th scope="col">duree restante</th>
+      <!-- <th scope="col">budget</th> -->
+
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let bud of budget">
+
+       <td>{{bud.code}}</td>
+      <td>{{bud.libelle}}</td>
+      <td>{{bud.montant}}</td>
+      <td>{{bud.duree_restante}}</td>
+
+      <td><a routerLink="/materiel/modifier" class="btn btn-primary">Modifier</a></td>
+      <td><a class="btn btn-success mr" routerLink="/materiel/modifier">Supprimer</a></td>
+    </tr>
+    <tr class="fw-bold"> le budget prévisionnel est : {{r}}  Francs CFA</tr>
+
+
+  </tbody>
+</table>

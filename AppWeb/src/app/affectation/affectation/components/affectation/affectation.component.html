@@ -1,0 +1,172 @@
+<button type="button" class="btn btn-primary boutonModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Affecter un materiel</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold text-center text-primary marge mt-5" id="exampleModalLabel">Affectation de materiel</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="affectation">
+
+          <div class="row">
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="statut-name" class="col-form-label" >Employe:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="employe" style="width: 100px;">
+                  <option selected  *ngFor="let empl of employe" value="{{empl.id}}">{{empl.matricule}}</option>
+
+                  <!-- <option value="2">En Service</option>
+                  <option value="3">Obselect</option>
+                  <option value="3">ObseEn Pannelect</option> -->
+                </select>
+              </div>
+            </div>
+
+                <div class="col-6">
+                  <div class="mb-3">
+                <label for="statut-name" class="col-form-label">Materiel:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="materiel">
+                  <option selected  *ngFor="let mate of materiels" value="{{mate.id}}">{{mate.code}}</option>
+
+                  <!-- <option value="2">En Service</option>
+                  <option value="3">Obselect</option>
+                  <option value="3">ObseEn Pannelect</option> -->
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- <div class="col-6">
+              <div class="mb-3">
+                <label for="code-name" class="col-form-label">debutperiode_utilisation:</label>
+                <input type="date" class="form-control" formControlName="debutperiode_utilisation" id="code-name">
+              </div>
+            </div> -->
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="marque-name" class="col-form-label">statut_mat:</label>
+                <input type="text" class="form-control" id="marque-name" formControlName="statut_mat">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="libelle-name" class="col-form-label">finperiode_utilisation:</label>
+                <input type="date" class="form-control" id="libelle-text" formControlName="finperiode_utilisation">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="marque-name" class="col-form-label">latitude:</label>
+                <input type="text" class="form-control" id="marque-name" formControlName="latitude">
+              </div>
+            </div>
+
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="modele-name" class="col-form-label">Longitude:</label>
+                <input type="text" class="form-control" id="modele-text" formControlName="longitude">
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="row">
+
+          </div>
+
+
+
+
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" disable = "true" (click)="save()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<a routerLink="/reclamation" class="btn btn-primary list">Liste reclamation Materiel</a>
+
+
+<router-outlet></router-outlet>
+
+
+<h2 class="fw-bold text-center text-primary">Affectation de Materiels</h2>
+
+<table class="table table-striped table-hover mt-3 taille">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Libelle</th>
+      <th scope="col">durée</th>
+      <th scope="col">durée restante</th>
+      <!-- <th scope="col">montant</th> -->
+      <!-- <th scope="col">statut</th>-->
+      <th scope="col">Nom Employe</th>
+      <th scope="col">Email Employe</th>
+      <!-- <th scope="col">type matériel</th>
+
+      <th scope="col">site Employe</th> -->
+      <th scope="col">Adresse Mac</th>
+      <th scope="col">Marque</th>
+      <th scope="col">statut</th>
+      <!-- <th scope="col">Entrée stock</th>
+      <th scope="col">Montant</th>
+      <th scope="col">Mise à disposition</th>
+      <th scope="col">Bon livraison</th> -->
+      <th scope="col">Actions</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hist of histomateriel">
+
+      <td> {{ hist.code }}</td>
+      <td> {{ hist.libelle }}</td>
+      <td> {{ hist.duree_utilisation | date}}</td>
+      <td class="text-white text-center" [ngStyle]="{'background-color':hist.duree_restante === 0 ?  'red': 'green' }" > {{hist.duree_restante}}</td>
+      <!-- <td> {{ hist.statut_mat }}</td> -->
+      <td> {{ hist.nom_emp }}</td>
+      <td> {{ hist.email_empl }}</td>
+      <!-- <td> {{ hist.typeMateriel }}</td>
+      <td> {{ hist.email }}</td> -->
+      <td> {{ hist.localmac_address}}</td>
+      <td> {{ hist.marque }}</td>
+      <td> affecté</td>
+      <!-- <td> {{ hist.statut_mat}}</td> -->
+
+      <!-- <td> {{ hist.date_enregistrement  }}</td> -->
+      <!-- <td> {{ hist.montant }}</td> -->
+      <!-- <td> {{ hist.date_utilisation}}</td> -->
+      <!-- <td> {{ hist.materiel.bonLivraison.numero_livraison }}</td> -->
+
+
+      <td><a routerLink="/materiel/modifier" class="btn btn-primary">Modifier</a></td>
+      <td><a class="btn btn-success" routerLink="/materiel/modifier">Supprimer</a></td>
+    </tr>
+
+  </tbody>
+</table>

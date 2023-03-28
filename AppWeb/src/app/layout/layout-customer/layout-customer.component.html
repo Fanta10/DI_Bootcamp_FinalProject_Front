@@ -1,0 +1,81 @@
+<div class="row" id="SPA">
+
+  <div class="col-12">
+
+    <!-- debut navbar -->
+    <div class="row" id="navbar">
+      <div class="col-12">
+        <header>
+          <nav class="navbar navbar-expand-lg fixed-top bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white" href="#">2SAM</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse end" id="navbarSupportedContent">
+                <form class="d-flex ms-auto" role="search">
+                  <button class="btn btn-success mx-2">Deconnexion</button>
+                  <input class="form-control mx-1" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit"><i class="fa fa-fw fa-search"></i></button>
+
+                </form>
+              </div>
+            </div>
+          </nav>
+
+        </header>
+
+      </div>
+    </div>
+    <!-- end navbar -->
+    <!-- debut sidebar et le contenu -->
+    <div class="row" id="sidebar">
+      <div class="col-3">
+        <!-- The sidebar -->
+        <div class="sidebar fixed-left">
+          <a class="active mt-5 marge" routerLink="/dashboard"><i class="fa fa-fw fa-home fw-bold"></i>Dashboard</a>
+          <a routerLink="/materiel"><i class="fa fa-fw fa-desktop"></i>Materiel</a>
+          <a routerLink="/employe"><i class="fa fa-fw fa-user"></i>Employe</a>
+          <a routerLink="/affectation"><i class="fa fa-fw fa-store"></i>Affectation Matériel</a>
+          <a routerLink="/suivi"><i class="fa fa-fw fa-bell"></i>Suivi Materiel</a>
+          <a routerLink="/budget"><i class="fa fa-fw fa-gem"></i>Budget Prévisionnel</a>
+          <!-- <a routerLink="/parmatre"><i class="fa fa-fw fa-tag"></i>Parametres</a> -->
+
+
+
+        </div>
+
+        <!-- end sidebar -->
+      </div>
+      <div class="col-9 mt-5">
+
+
+        <router-outlet></router-outlet>
+
+
+      </div>
+    </div>
+    <!-- end sidebar et le contenu -->
+    <!-- debut footer -->
+    <div class="row" id="footer">
+      <div class="col-12">
+        <!-- Footer -->
+        <footer class="text-center text-lg-start fixed-bottom bg-light text-muted">
+          <!-- Section: Social media -->
+
+          <!-- Copyright -->
+          <div class="text-center p-4 colorfooter">
+            © 2023 Copyright:
+            <a class="text-reset fw-bold" routerLink="">formation@adaci.com</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+      </div>
+    </div>
+    <!-- end footer -->
+  </div>
+</div>

@@ -1,0 +1,64 @@
+
+<table class="table table-striped table-hover mt-3 taille">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Code</th>
+      <th scope="col">Libelle</th>
+      <!-- <th scope="col">Marque</th>
+      <th scope="col">Modele</th>
+      <th scope="col">Montant</th>
+      <th scope="col">numero serie</th> -->
+      <th scope="col">durée</th>
+      <th scope="col">Debut garantie</th>
+      <th scope="col">Fin garantie</th>
+      <th scope="col">Mise à disposition</th>
+      <th scope="col">Adresse Mac</th>
+      <th scope="col">Entrée</th>
+
+
+
+      <th scope="col">statut</th>
+
+
+
+
+      <!-- <th scope="col"> type matériel</th> -->
+
+
+
+
+      <th scope="col">Actions</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let materiel of materiels">
+      <td>{{materiel.id}}</td>
+      <td>{{materiel.code}}</td>
+      <td>{{materiel.libelle}}</td>
+      <!-- <td>{{materiel.marque}}</td>
+      <td>{{materiel.modele}}</td>
+      <td>{{materiel.montant}}</td>
+       <td>{{materiel.typeMateriel}}</td>
+      <td>{{materiel.num_serie}}</td> -->
+      <td>{{materiel.duree_utilisation}}</td>
+      <td>{{materiel.debut_garantie | date : "dd-MM-yyyy"}}</td>
+      <td>{{materiel.fin_garantie | date : "dd-MM-yyyy"}}</td>
+      <td>{{materiel.date_utilisation | date : "dd-MM-yyyy"}}</td>
+      <td>{{materiel.localmac_address}}</td>
+      <td>{{materiel.date_enregistrement | date : "dd-MM-yyyy"}}</td>
+      <td>{{materiel.statut_materiel.libelle}}</td>
+
+
+      <!-- <td>{{materiel.statut_materiel}}</td> -->
+
+
+      <td><button  class="btn btn-primary" (click)="edit(materiel)">Modifier</button></td>
+      <td><button class="btn btn-success"  (click)="delete(materiel.id)">Supprimer</button></td>
+
+    </tr>
+
+  </tbody>
+</table>

@@ -1,0 +1,155 @@
+<button type="button" class="btn btn-primary boutonModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Enregistrer materiel</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold text-center text-primary" id="exampleModalLabel">Enregistrement de matériels</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm">
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="code-name" class="col-form-label">Code:</label>
+                <input type="text" class="form-control" formControlName="code" id="code-name">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="libelle-name" class="col-form-label">Libelle:</label>
+                <input type="text" class="form-control" id="libelle-text" formControlName="libelle">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="marque-name" class="col-form-label">Marque:</label>
+                <input type="text" class="form-control" id="marque-name" formControlName="marque">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="modele-name" class="col-form-label">Modele:</label>
+                <input type="text" class="form-control" id="modele-text" formControlName="modele">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="serie-name" class="col-form-label">N° serie:</label>
+                <input type="text" class="form-control" id="serie-name" formControlName="num_serie">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="dateEnre-name" class="col-form-label">Date Entrée stock:</label>
+                <input type="date" class="form-control" id="dateEnre-text" formControlName="date_enregistrement">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="serie-name" class="col-form-label">Type Matériel:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="typeMateriel">
+                  <option selected value="{{type.id}}"  *ngFor="let type of typeMateriels" >{{type.libelle}}</option>
+
+
+                </select>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="statut-name" class="col-form-label">Statut Matériel:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="statut_materiel">
+                  <option selected  *ngFor="let stat of statutMateriels" value="{{stat.id}}">{{stat.libelle}}</option>
+
+
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="duree-name" class="col-form-label">Durée Utilisation:</label>
+                <input type="number" class="form-control" id="duree-name" formControlName="duree_utilisation">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="datemise-name" class="col-form-label">Date Mise à disposition:</label>
+                <input type="date" class="form-control" id="datemise-text" formControlName="date_utilisation">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="adresse-name" class="col-form-label">Adresse Mac:</label>
+                <input type="text" class="form-control" id="adresse-name" formControlName="localmac_address">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="montant-name" class="col-form-label">Montant:</label>
+                <input type="number" class="form-control" id="montant-text" formControlName="montant">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="debgar-name" class="col-form-label">Debut Garantie:</label>
+                <input type="date" class="form-control" id="debgar-name" formControlName="debut_garantie">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="fingar-name" class="col-form-label">Fin Garantie:</label>
+                <input type="date" class="form-control" id="fingar-text" formControlName="fin_garantie">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="liv-name" class="col-form-label">Bon Livraison:</label>
+
+                <select class="form-select" aria-label="Default select example" formControlName="bonLivraison">
+                  <option selected>Choisissez statut materiel</option>
+                  <option value="{{liv.id}}" *ngFor="let liv of bonLivraison">{{liv.numero_livraison}}</option>
+
+
+
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" #closeModal class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" disable = "true" (click)="save()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="fw-bold text-center text-primary">Liste de Materiels</h2>
+<app-listemateriel></app-listemateriel>

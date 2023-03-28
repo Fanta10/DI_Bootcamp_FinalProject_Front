@@ -1,0 +1,51 @@
+<h1 class="fw-bold text-center text-primary">Suivi de Materiels</h1>
+
+<router-outlet></router-outlet>
+
+<table class="table table-striped table-hover mt-3 taille">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Libelle</th>
+      <th scope="col">durée</th>
+      <th scope="col">durée restante</th>
+
+      <th scope="col">Nom Employe</th>
+      <th scope="col">Email Employe</th>
+
+      <th scope="col">longitude</th>
+      <th scope="col"> latitude</th>
+      <th scope="col">statut</th>
+      <th scope="col">Mise à disposition</th>
+      <th scope="col">Periode fin affectation</th>
+
+
+
+
+      <th scope="col">Actions</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let suivis of suivi">
+      <td>{{suivis.code}}</td>
+      <td>{{suivis.libelle}}</td>
+      <td>{{suivis.duree_utilisation}}</td>
+      <td>{{suivis.duree_restante}}</td>
+      <td>{{suivis.nom_emp}}</td>
+      <td>{{suivis.email_empl}}</td>
+      <td>{{suivis.longitude}}</td>
+      <td>{{suivis.latitude}}</td>
+      <td>affecté</td>
+      <!-- <td>{{suivis.statut_mat}}</td> -->
+      <td>{{suivis.disposition | date : "dd-MM-yyyy"}}</td>
+      <td>{{suivis.finperiode_utilisation | date : "dd-MM-yyyy"}}</td>
+      <td><button class="btn btn-success">supprimer</button></td>
+      <td><button class="btn btn-primary">modifier</button></td>
+
+
+    </tr>
+
+  </tbody>
+</table>

@@ -1,0 +1,118 @@
+
+
+<a routerLink="/affectation" class="btn btn-info space">retour</a>
+
+<button type="button" class="btn btn-primary boutonModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Faire une reclamation</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold text-center text-primary" id="exampleModalLabel">Reclamation sur un materiel</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="code-name" class="col-form-label">Matricule:</label>
+                <input type="text" class="form-control" formControlName="matricule" id="code-name">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="libelle-name" class="col-form-label">Nom:</label>
+                <input type="text" class="form-control" id="libelle-text" formControlName="nom">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="marque-name" class="col-form-label">Prenom:</label>
+                <input type="text" class="form-control" id="marque-name" formControlName="prenom">
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="modele-name" class="col-form-label">Email:</label>
+                <input type="text" class="form-control" id="modele-text" formControlName="email">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="statut-name" class="col-form-label">Site Employe:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="site">
+                  <option selected  *ngFor="let site of " value=""></option>
+
+
+                </select>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="statut-name" class="col-form-label">Libelle Materiel:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="site">
+                  <option selected  *ngFor="let site of " value=""></option>
+
+
+                </select>
+              </div>
+
+            </div>
+
+
+
+          </div>
+          <div class="row">
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="statut-name" class="col-form-label">Observation:</label>
+                <textarea  class="form-control" placeholder="observation" formControlName="site">
+
+
+
+                </textarea>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="statut-name" class="col-form-label">Motif:</label>
+                <select class="form-select" aria-label="Default select example" formControlName="site">
+                  <option selected  *ngFor="let site of " value=""></option>
+
+
+                </select>
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" disable = "true">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-liste-reclamation></app-liste-reclamation>
+
+
+
+
+
